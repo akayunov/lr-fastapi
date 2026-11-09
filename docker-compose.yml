@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: lr-fastapi-app:1.0.0
+    command: ["fastapi", "dev",  "--app", "app", "--host", "0.0.0.0.", "--port",  "54321"]
+    ports:
+      - "54321:54321"
+      - "15275:15275"
+    volumes:
+      - ./:/app
+
